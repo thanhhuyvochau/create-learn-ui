@@ -2,6 +2,8 @@
 
 # Frontend Start Script for create-learn-ui
 # This script runs the pre-built frontend container
+# Usage: ./deploy.sh [profile]
+# Profiles: dev (default), prod
 
 set -e
 
@@ -9,7 +11,26 @@ set -e
 IMAGE_NAME="create-learn-ui"
 CONTAINER_NAME="create-learn-ui"
 PORT="8888"
-API_URL="${NEXT_PUBLIC_API_URL:-http://localhost:8080}"
+
+# Get profile from argument, default to dev
+PROFILE="${1:-dev}"
+
+# Set API URL based on profile
+case "${PROFILE}" in
+  prod|production)
+    API_URL="${NEXT_PUBLIC_API_BASE_URL:-http://76.13.181.170:8080}"
+    echo "Using PROD profile"
+    ;;
+  dev|development)
+    API_URL="${NEXT_PUBLIC_API_BASE_URL:-http://localhost:8080}"
+    echo "Using DEV profile"
+    ;;
+  *)
+    echo "Error: Unknown profile '${PROFILE}'"
+    echo "Available profiles: dev, prod"
+    exit 1
+    ;;
+esac
 
 echo "========================================="
 echo "Starting Create Learn UI (Frontend)"
