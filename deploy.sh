@@ -10,7 +10,7 @@ set -e
 # Configuration
 IMAGE_NAME="create-learn-ui"
 CONTAINER_NAME="create-learn-ui"
-PORT="8888"
+PORT="3000"
 
 # Get profile from argument, default to dev
 PROFILE="${1:-dev}"
@@ -67,7 +67,7 @@ echo ""
 echo "Starting container: ${CONTAINER_NAME}..."
 docker run -d \
     --name ${CONTAINER_NAME} \
-    -p ${PORT}:8888 \
+    -p ${PORT}:3000 \
     -e NEXT_PUBLIC_API_URL="${API_URL}" \
     -e NODE_ENV=production \
     --restart unless-stopped \
