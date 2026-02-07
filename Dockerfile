@@ -35,7 +35,7 @@ COPY . .
 # ENV NEXT_TELEMETRY_DISABLED=1
 
 # Copy environment file based on NODE_ENV
-COPY .env.${NODE_ENV} .env.production || true
+COPY .env.${NODE_ENV} .env.production
 
 RUN \
   if [ -f yarn.lock ]; then yarn run build; \
