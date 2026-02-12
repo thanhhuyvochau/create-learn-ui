@@ -123,7 +123,7 @@ const LoginPage = () => {
                 c="fresh-blue"
                 ta={{ base: 'center', md: 'left' }}
               >
-                Welcome back to Create Learn
+                Welcome back to Algocore
               </Title>
 
               {submitError && (
