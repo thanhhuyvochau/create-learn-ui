@@ -118,13 +118,25 @@ const NavigationLinks = () => {
 
 const Logo = () => (
   <Link href="/">
-    <Image
-      src="/images/cl_logo.webp"
-      alt="Website Logo"
-      width={150}
-      height={40}
-      priority
-    />
+    <div
+      style={{
+        width: '150px',
+        height: '40px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        overflow: 'hidden',
+      }}
+    >
+      <Image
+        src="/images/algocore-logo.jpg"
+        alt="Website Logo"
+        width={150}
+        height={40}
+        style={{ objectFit: 'contain' }}
+        priority
+      />
+    </div>
   </Link>
 );
 
