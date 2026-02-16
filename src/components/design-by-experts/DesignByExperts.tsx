@@ -42,7 +42,7 @@ const ExpertsSection = () => (
     <Center py={20} visibleFrom="smmd">
       <Box pb={6} px={10}>
         <Text fw={400} c="rgba(0, 0, 0, 0.6)">
-          Designed by experts from:
+          Được thiết kế bởi các chuyên gia hàng đầu:
         </Text>
       </Box>
 
@@ -63,7 +63,7 @@ const ExpertsSection = () => (
     <Stack align="center" gap="xs" py={20} hiddenFrom="smmd">
       <Center>
         <Text fw={400} c="rgba(0, 0, 0, 0.6)">
-          Designed by experts from:
+          Được thiết kế bởi các chuyên gia hàng đầu:
         </Text>
       </Center>
 

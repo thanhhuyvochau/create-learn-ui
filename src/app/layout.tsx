@@ -31,7 +31,7 @@ export default function RootLayout({
     <html lang="en" {...mantineHtmlProps}>
       <head>
         <ColorSchemeScript />
-        <title>Algocore</title>
+        <title>AlgoCore Education</title>
       </head>
       <body className={roboto.className}>
         <MantineProvider theme={theme}>

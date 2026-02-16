@@ -21,31 +21,31 @@ interface FeatureCardProps {
 const FEATURE_CARDS_DATA = [
   {
     id: 'award-winning',
-    icon: '/images/react-icon.webp',
-    title: 'Award-Winning Education',
+    icon: '/images/IBDP.png',
+    title: 'IBDP (SL & HL)',
     description:
-      'Featured by Minecraft Education, Code.org, Meta, Roblox Education, ActivityHero, and more.',
+      'Luyện thi và đào sâu tư duy học thuật chuẩn IB. Hướng dẫn IA, rèn kỹ năng phân tích và chiến lược đạt Level 6–7.',
   },
   {
     id: 'small-groups',
-    icon: '/images/people-icon.webp',
-    title: 'Very Small Group Classes',
+    icon: '/images/AP.png',
+    title: 'Advanced Placement (AP)',
     description:
-      'Enjoy personalized attention from your teacher with just 3-5 students per class.',
+      'Lộ trình chinh phục AP 4–5 điểm. Ôn tập bám sát syllabus, luyện MCQ & FRQ với chiến lược làm bài chuẩn College Board.',
   },
   {
     id: 'expert-teachers',
-    icon: '/images/ideal-icon.webp',
-    title: 'Expert Teachers',
+    icon: '/images/A-Level.png',
+    title: 'AS & A Level (Cambridge)',
     description:
-      'Less than 5% of teacher candidates are selected as instructors, and our state-of-the-art technology ensures on-going quality.',
+      'Nắm vững kiến thức chuyên sâu và kỹ năng làm bài nâng cao. Luyện past paper theo chuẩn Cambridge, tập trung vào command terms.',
   },
   {
     id: 'satisfaction-guarantee',
-    icon: '/images/award-icon.webp',
-    title: '100% Satisfaction Guarantee',
+    icon: '/images/igcse2.webp',
+    title: 'IGCSE',
     description:
-      'Have fun learning computer science. Find the perfect class, or get a full refund.',
+      'Xây nền tảng học thuật vững chắc và tư duy giải đề. Luyện tập theo cấu trúc đề thi để sẵn sàng cho bậc học cao hơn.',
   },
 ] as const;
 
@@ -104,7 +104,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
           justify="center"
         >
           <Title
-            c="fresh-blue"
+            c="brand-teal"
             fz={CARD_STYLES.typography.titleSize}
             ta="center"
             fw={600}
@@ -127,7 +127,11 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
 
 const FeatureCardSection: React.FC = () => {
   return (
-    <GradientBox pt={100} pb={62}>
+    <GradientBox
+      pt={100}
+      pb={62}
+      bgColor="var(--mantine-color-brand-navy-6)"
+    >
       <Container size="xl">
         <Flex
           wrap="wrap"

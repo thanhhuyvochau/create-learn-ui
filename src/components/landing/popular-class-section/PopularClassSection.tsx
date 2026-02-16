@@ -41,9 +41,9 @@ const PopularClassSection = () => {
       <Text
         fz={{ base: '2.99rem', sm: '2.57rem', md: '2.78rem', lg: '2.99rem' }}
         ta="center"
-        c="fresh-blue"
+        c="brand-teal"
       >
-        Popular Coding Classes For Kids
+        Chương Trình Học Thuật Quốc Tế Nổi Bật
       </Text>
       {classes && classes.length > 0 ? (
         <Flex w="100%" wrap="wrap" justify="center" gap={40}>

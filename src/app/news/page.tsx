@@ -22,7 +22,7 @@ const DeskTopSection = () => (
     <Box className={styles.coverBanner}>
       <Box className={styles.siteCover}>
         <Image
-          src="/images/coding-kids-hero.png"
+          src="/images/class-banner.png"
           alt="Coding Kids Hero"
           className={styles.coverImg}
         />
@@ -37,7 +37,7 @@ const DeskTopSection = () => (
 
 const MobileSection = () => (
   <BackgroundImage
-    src="/images/coding-kids-hero.png"
+    src="/images/class-banner.png"
     hiddenFrom="smmd"
     h={360}
     pos="relative"

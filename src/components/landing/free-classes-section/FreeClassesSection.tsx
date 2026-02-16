@@ -29,7 +29,7 @@ const FreeClassesSection = () => {
   };
 
   return (
-    <GradientBox py={SECTION_PADDING}>
+    <GradientBox py={SECTION_PADDING} bgColor="var(--mantine-color-brand-navy-6)">
       <Stack
         maw={CONTAINER_MAX_WIDTH}
         w="100%"
@@ -45,15 +45,14 @@ const FreeClassesSection = () => {
             pr={{ lg: TEXT_SECTION_PADDING_RIGHT }}
           >
             <Text c="white" fz={TITLE_FONT_SIZES}>
-              Start With
+              Bắt Đầu Với
             </Text>
             <Text c="white" fz={TITLE_FONT_SIZES}>
-              Free Classes
+              Lớp Học Thử Miễn Phí
             </Text>
             <Text c="white" fz={DESCRIPTION_FONT_SIZE}>
-              Join a free coding class to experience the magic! Learn in a small
-              group with experienced instructors and have fun! Students new to
-              coding should start with a Scratch class
+              Trải nghiệm phương pháp giảng dạy chuẩn quốc tế tại AlgoCore.
+Học theo nhóm nhỏ, định hướng rõ mục tiêu IB, AP & Cambridge, tập trung tư duy học thuật và chiến lược nâng cao điểm số.
             </Text>
           </Flex>
           <Flex

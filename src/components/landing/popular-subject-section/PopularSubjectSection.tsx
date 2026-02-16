@@ -28,11 +28,10 @@ const PopularSubjectSection: React.FC = () => {
     <Container fluid py={48}>
       <Container maw={976}>
         <Text fz={{ base: '1.82rem', md: '2.25rem' }} ta="center">
-          Popular Subjects for Kids&apos; Coding Classes
+          Lớp Học Mũi Nhọn Tại AlgoCore
         </Text>
         <Text fz="1rem" fw={400} c="rgba(0, 0, 0, 0.6)" ta="center">
-          Explore a variety of engaging computer science subjects designed to
-          spark learners&apos; interests in technology.
+          Những chương trình được đầu tư chuyên sâu, học theo nhóm nhỏ tinh gọn, định hướng chiến lược và cá nhân hóa lộ trình để đạt thành tích cao trong các kỳ thi quốc tế.
         </Text>
       </Container>
       <Center mt={48}>

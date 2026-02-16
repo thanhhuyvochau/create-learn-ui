@@ -12,6 +12,10 @@ type GradientBoxProps = BoxProps & {
   fromShade?: number;
   toShade?: number;
   deg?: number;
+
+  // ✅ NEW: allow solid background (CSS var / hex / any valid CSS color)
+  bgColor?: string;
+
   justify?: React.CSSProperties['justifyContent'];
   align?: React.CSSProperties['alignItems'];
   direction?: React.CSSProperties['flexDirection'];
@@ -47,6 +51,9 @@ const GradientBox = ({
   fromShade,
   toShade,
   deg = DEFAULT_PROPS.deg,
+
+  bgColor, // ✅ NEW
+
   justify = DEFAULT_PROPS.justify,
   align = DEFAULT_PROPS.align,
   direction = DEFAULT_PROPS.direction,
@@ -91,6 +98,10 @@ const GradientBox = ({
 
   const { colorFrom, colorTo } = getColorShades();
 
+  // ✅ Solid background takes priority over gradient
+  const backgroundValue =
+    bgColor ?? `linear-gradient(${deg}deg, ${colorFrom}, ${colorTo})`;
+
   return (
     <Flex
       {...props}
@@ -101,8 +112,8 @@ const GradientBox = ({
       gap={gap}
       rowGap={rowGap}
       style={{
-        background: `linear-gradient(${deg}deg, ${colorFrom}, ${colorTo})`,
-        borderRadius: radius, 
+        background: backgroundValue,
+        borderRadius: radius,
         ...style,
       }}
     >

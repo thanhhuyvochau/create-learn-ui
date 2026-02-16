@@ -59,74 +59,76 @@ const ReviewCard: React.FC<ReviewCardProps> = React.memo(
 
 ReviewCard.displayName = 'ReviewCard';
 
+// ✅ Nội dung review demo (sau này bạn có thể thay bằng data thật)
 const REVIEW_DATA = [
   {
     review:
-      'Excellent service! The team was professional and delivered exactly what we needed',
+      'Lộ trình học rõ ràng, tập trung đúng mục tiêu IB/AP. Con cải thiện kỹ năng làm bài chỉ sau vài buổi.',
     rating: 5,
-    name: 'Sarah Johnson',
+    name: 'Phụ huynh bạn Minh',
     date: '2024-01-15',
   },
   {
     review:
-      'Great experience overall. Quick response time and quality work. Will definitely use again.',
-    rating: 4,
-    name: 'Michael Chen',
+      'Giáo viên hướng dẫn rất chiến lược, sửa bài chi tiết. Học nhóm nhỏ nên con được theo sát liên tục.',
+    rating: 5,
+    name: 'Phụ huynh bạn An',
     date: '2024-01-12',
   },
   {
     review:
-      'Outstanding quality and attention to detail. The project exceeded our expectations.',
+      'Nội dung bám sát syllabus Cambridge, luyện đề đúng dạng, giúp con tự tin hơn khi vào kỳ thi.',
     rating: 5,
-    name: 'Emily Davis',
+    name: 'Bạn Khánh (AS Level)',
     date: '2024-01-10',
   },
   {
     review:
-      'Good service but took a bit longer than expected. Results were satisfactory though.',
-    rating: 3,
-    name: 'Robert Wilson',
+      'Tư vấn học thuật rất kỹ, chỉ ra đúng lỗ hổng và đưa kế hoạch học phù hợp. Tiến bộ thấy rõ.',
+    rating: 4,
+    name: 'Phụ huynh bạn Vy',
     date: '2024-01-08',
   },
   {
     review:
-      'Amazing work! The team understood our requirements perfectly and delivered on time.',
+      'Môi trường học nghiêm túc và chất lượng. Con học được tư duy giải bài thay vì học mẹo.',
     rating: 5,
-    name: 'Lisa Martinez',
+    name: 'Bạn Nam (IBDP)',
     date: '2024-01-05',
   },
   {
     review:
-      'Professional and reliable. The communication throughout the process was excellent.',
-    rating: 4,
-    name: 'David Thompson',
+      'Thầy cô theo sát mục tiêu điểm số, feedback nhanh. Mình thấy đúng định vị “premium” của AlgoCore.',
+    rating: 5,
+    name: 'Bạn Linh (AP)',
     date: '2024-01-03',
   },
   {
     review:
-      'Very impressed with the final product. Clean, efficient, and exactly what we asked for.',
+      'Lớp học có cấu trúc rõ ràng: lý thuyết ngắn gọn, luyện tập trọng tâm, chấm chữa theo rubric.',
     rating: 5,
-    name: 'Jennifer Brown',
+    name: 'Phụ huynh bạn Huy',
     date: '2023-12-28',
   },
   {
     review:
-      'Solid work with room for improvement. The team was responsive to feedback.',
-    rating: 3,
-    name: 'Mark Anderson',
+      'Chương trình phù hợp với học sinh cần tăng tốc. Giáo viên hướng dẫn cách học và tự luyện ở nhà.',
+    rating: 4,
+    name: 'Bạn Trang (IGCSE)',
     date: '2023-12-25',
   },
   {
     review:
-      'Fantastic collaboration! They went above and beyond to ensure our satisfaction.',
+      'Đội ngũ support tốt, tư vấn rõ ràng và chuyên nghiệp. Con thích học vì được giải đáp nhanh.',
     rating: 5,
-    name: 'Amanda Taylor',
+    name: 'Phụ huynh bạn Phúc',
     date: '2023-12-22',
   },
   {
-    review: 'Great value for money. Professional service with timely delivery.',
-    rating: 4,
-    name: 'Christopher Lee',
+    review:
+      'Mình đánh giá cao cách AlgoCore tập trung vào kết quả và chiến lược làm bài, không lan man.',
+    rating: 5,
+    name: 'Bạn Quân (A Level)',
     date: '2023-12-20',
   },
 ];
@@ -143,18 +145,25 @@ const CustomerReviewSection: React.FC = () => {
   );
 
   return (
-    <GradientBox py={48} direction="column">
+    <GradientBox
+      py={48}
+      direction="column"
+      bgColor="var(--mantine-color-brand-navy-6)"
+    >
       <Text
         fz={{ base: '1.82rem', sm: '2.03rem' }}
         fw={500}
         ta="center"
         c="white"
       >
-        Trusted by 100,000+ Students and Parents Worldwide
+        Phụ huynh & học sinh tin tưởng AlgoCore
       </Text>
+
       <Text fz="1rem" fw={400} ta="center" c="white" mb="2.5rem">
-        Trusted by 100,000+ Students and Parents Worldwide
+        Định hướng học thuật rõ ràng • Nhóm nhỏ tinh gọn • Tập trung kết quả IB, AP
+        & Cambridge
       </Text>
+
       <Carousel
         maw={{ base: '90%', sm: '70%', md: '90%', xl: '70%' }}
         withIndicators
