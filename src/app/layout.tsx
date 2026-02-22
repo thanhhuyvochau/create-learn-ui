@@ -16,6 +16,8 @@ import { QueryProvider } from '@/providers/QueryProvider';
 import { NotificationProvider } from '@/providers';
 import '@mantine/tiptap/styles.css';
 
+import Footer from '@/components/landing/footer-section/Footer'; // ✅ thêm dòng này
+
 const roboto = Roboto({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700', '800', '900'],
@@ -40,6 +42,7 @@ export default function RootLayout({
               <NotificationProvider>
                 <Header />
                 {children}
+                <Footer /> {/* ✅ thêm Footer ở đây */}
               </NotificationProvider>
             </AuthProvider>
           </QueryProvider>

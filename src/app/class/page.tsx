@@ -42,19 +42,19 @@ const AllClasses = () => {
   return (
     <Container fluid>
       <ClassHeaderPage
-        image="/images/class-kid.webp"
-        title="Join fun kids computer classes!"
-        description="Enjoy small-group kids' classes, led by engaging teachers and designed by Google, MIT, and Stanford experts."
+        image="/images/back-ground-class.png"
+        title="Chinh phục chương trình quốc tế cùng AlgoCore"
+        description="Lớp nhóm nhỏ/1-1 theo lộ trình IGCSE • AS/A Level • IBDP • AP. Học bám syllabus, luyện exam-style, theo dõi tiến độ và mục tiêu điểm số rõ ràng."
         desktopOnly
       />
 
       <ClassHeaderPage
-        image="/images/class-kid.webp"
-        title="Join fun kids computer classes!"
-        description="Enjoy small-group kids' classes, led by engaging teachers and designed by Google, MIT, and Stanford experts."
+        image="/images/back-ground-class.png"
+        title="Học đúng lộ trình – Thi đúng trọng tâm"
+        description="AlgoCore thiết kế lộ trình cá nhân hoá theo năng lực. Tăng điểm bằng hệ thống bài tập, mock test, feedback chi tiết và hỗ trợ sát sao theo từng buổi học."
         mobileOnly
       />
-      
+
       <Center my={56}>
         <Flex wrap="wrap" gap={56} maw={1200} justify="center">
           {classes.map((classItem) => (

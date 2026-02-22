@@ -31,9 +31,12 @@ interface NavigationLink {
 }
 
 const NAVIGATION_LINKS: NavigationLink[] = [
-  { name: 'Classes', href: '/class' },
-  { name: 'Blog', href: '/news' },
-  { name: 'Subjects', href: '/subjects' },
+  { name: 'Giới thiệu', href: '/about' },
+  { name: 'Chương trình học', href: '/subjects' },
+  { name: 'Khóa học', href: '/class' },
+  { name: 'Giáo viên', href: '/teachers' },
+  { name: 'Blog học thuật', href: '/news' },
+  { name: 'Tuyển dụng', href: '/recruitment' },
 ] as const;
 
 const placeholderIcon = 'https://via.placeholder.com/96x96.png?text=Subject';
@@ -198,12 +201,12 @@ const UserSection = ({ isLoggedIn, onLogout, userLogin }: UserSectionProps) => {
   return (
     <Group gap="xs">
       <Button visibleFrom="md" onClick={() => router.push('/login')}>
-        Login
+        Đăng nhập
       </Button>
 
       {/* Mobile Login Button */}
       <Button hiddenFrom="md" size="sm" onClick={() => router.push('/login')}>
-        Login
+        Đăng nhập
       </Button>
     </Group>
   );

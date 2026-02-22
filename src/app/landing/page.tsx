@@ -14,9 +14,9 @@ const LandingPage = () => {
     <>
       <HeroSection />
       <FeatureCardSection />
-      <PopularClassSection />
-      <FreeClassesSection />
       <PopularSubjectSection />
+      <FreeClassesSection />
+      <PopularClassSection />
       <FindBestClassSection />
       <CustomerReviewSection />
       <NewsSection />

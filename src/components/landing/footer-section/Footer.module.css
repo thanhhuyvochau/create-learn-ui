@@ -1,0 +1,171 @@
+.outer {
+  /* Full width + không khoảng trống trên/dưới */
+  padding: 0;
+  background: var(--mantine-color-brand-navy-6);
+}
+
+.inner {
+  position: relative;
+
+  /* Full width */
+  width: 100%;
+
+  /* ❌ bỏ bo góc */
+  border-radius: 0;
+
+  /* Padding cho nội dung (thay vì padding outer) */
+  padding: 28px 40px 18px;
+
+  overflow: hidden;
+}
+
+.inner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      900px 220px at 20% 10%,
+      rgba(0, 168, 150, 0.16),
+      transparent 60%
+    ),
+    radial-gradient(
+      900px 240px at 85% 0%,
+      rgba(255, 255, 255, 0.08),
+      transparent 55%
+    );
+  pointer-events: none;
+}
+
+.layout {
+  position: relative;
+  z-index: 1;
+
+  /* ✅ không chừa chỗ cho star nữa */
+  padding-right: 0;
+}
+
+/* BRAND */
+.brandCol {
+  min-width: 280px;
+}
+
+.logoLink {
+  display: inline-flex;
+  align-items: center;
+}
+
+.logoImg {
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+}
+
+.desc {
+  font-size: 14px;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 380px;
+}
+
+/* LINKS */
+.linksWrap {
+  flex: 1;
+}
+
+.linkCol {
+  min-width: 170px;
+}
+
+.linkTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.link {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.62);
+  transition: color 160ms ease;
+}
+
+.link:hover {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+/* CONTACT */
+.contactCol {
+  min-width: 320px;
+}
+
+.contactRow {
+  align-items: flex-start;
+}
+
+.contactIcon {
+  color: rgba(255, 255, 255, 0.75);
+  margin-top: 2px;
+}
+
+.contactLink {
+  font-size: 14px;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 160ms ease;
+}
+
+.contactLink:hover {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* DIVIDER + BOTTOM */
+.divider {
+  position: relative;
+  z-index: 1;
+  margin-top: 16px;
+  border-top-color: rgba(255, 255, 255, 0.12);
+}
+
+.bottom {
+  position: relative;
+  z-index: 1;
+  padding-top: 10px;
+}
+
+.copy {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.58);
+}
+
+.bottomLink {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.58);
+  transition: color 160ms ease;
+}
+
+.bottomLink:hover {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ✅ Star class giữ lại cũng không sao, nhưng không dùng thì không hiện */
+.star {
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .layout {
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .inner {
+    padding: 24px 18px 16px;
+  }
+
+  .brandCol,
+  .linksWrap,
+  .contactCol {
+    width: 100%;
+    min-width: 100%;
+  }
+}

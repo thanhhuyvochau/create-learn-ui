@@ -56,25 +56,24 @@ const SubjectClassPage = () => {
   return (
     <Container fluid>
       <ClassHeaderPage
-        image="/images/class-kid.webp"
-        title={subject?.name || 'Join fun kids computer classes!'}
+        image="/images/back-ground-class.png"
+        title={subject?.name || 'Chương Trình Quốc Tế Tại AlgoCore Education'}
         description={
           subject?.description ||
-          'Enjoy small-group kids classes, led by engaging teachers and designed by Google, MIT, and Stanford experts.'
+          'Học theo nhóm nhỏ tinh gọn, lộ trình cá nhân hoá và chiến lược làm bài bám sát syllabus. Tập trung cải thiện điểm số qua luyện past papers/FRQ, feedback chi tiết và theo sát tiến độ.'
         }
         desktopOnly
       />
 
       <ClassHeaderPage
-        image="/images/class-kid.webp"
-        title={subject?.name || 'Join fun kids computer classes!'}
+        image="/images/back-ground-class.png"
+        title={subject?.name || 'Chương Trình Quốc Tế Tại AlgoCore Education'}
         description={
           subject?.description ||
-          'Enjoy small-group kids classes, led by engaging teachers and designed by Google, MIT, and Stanford experts.'
+          'Nhóm nhỏ • cá nhân hoá lộ trình • luyện thi theo syllabus. Rèn kỹ năng làm bài và nâng điểm bằng đề thi chuẩn quốc tế, có theo dõi tiến độ và phản hồi rõ ràng.'
         }
         mobileOnly
       />
-
       <Center my={56}>
         <Flex wrap="wrap" gap={56} maw={1200} justify="center">
           {classes.map((classItem) => (

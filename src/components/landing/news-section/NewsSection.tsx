@@ -64,7 +64,7 @@ const NewsSection: React.FC = () => {
         c="fresh-blue"
         fw={600}
       >
-        News for Kids and Parents
+        Blog học thuật của AlgoCore
       </Text>
 
       <Flex w="100%" wrap="wrap" justify="center" gap={40}>
