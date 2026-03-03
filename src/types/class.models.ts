@@ -14,12 +14,12 @@ export interface Class extends BaseEntity {
   isDisplayed: boolean;
   subjects: Subject[];
   grades: Grade[];
-  teacher: Teacher;
+  teacher: Teacher | null;
   price: number;
   scheduleResponses: Schedule[];
   subjectIds: number[];
   gradeIds: number[];
-  teacherId: number;
+  teacherId?: number | null;
 }
 
 export interface CreateClassRequest {
@@ -32,7 +32,7 @@ export interface CreateClassRequest {
   isDisplayed: boolean;
   subjectIds: number[];
   gradeIds: number[];
-  teacherId: number;
+  teacherId?: number | null;
   price: number;
 }
 

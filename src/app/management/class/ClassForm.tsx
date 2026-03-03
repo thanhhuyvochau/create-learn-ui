@@ -97,7 +97,7 @@ const ClassForm: React.FC<ClassFormProps> = ({
       name: (v) => (v ? null : 'Name is required'),
       brief: (v) => (v ? null : 'Brief is required'),
       description: (v) => (v ? null : 'Description is required'),
-      teacherId: (v) => (v ? null : 'Teacher is required'),
+
       price: (v) => (v >= 0 ? null : 'Price must be non-negative'),
       schedules: {
         time: (value) => (value ? null : 'Schedule time is required'),
@@ -241,7 +241,7 @@ const ClassForm: React.FC<ClassFormProps> = ({
         ...payload,
         subjectIds: payload.subjectIds.map(Number),
         gradeIds: payload.gradeIds.map(Number),
-        teacherId: Number(payload.teacherId),
+        teacherId: payload.teacherId ? Number(payload.teacherId) : null,
       };
 
       const { ...classData } = submitData;
@@ -346,11 +346,11 @@ const ClassForm: React.FC<ClassFormProps> = ({
         />
         <Select
           radius="md"
-          withAsterisk
           label="Teacher"
           placeholder="Select teacher"
           data={teacherOptions}
           searchable
+          clearable
           {...form.getInputProps('teacherId')}
         />
 

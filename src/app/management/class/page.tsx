@@ -90,7 +90,7 @@ const ClassesPage = () => {
           isDisplayed: data.isDisplayed!,
           subjectIds: data.subjectIds!,
           gradeIds: data.gradeIds!,
-          teacherId: data.teacherId!,
+          teacherId: data.teacherId ?? null,
           price: data.price!,
           // Note: schedules are handled separately in the form
         };
@@ -106,7 +106,7 @@ const ClassesPage = () => {
           isDisplayed: data.isDisplayed!,
           subjectIds: data.subjectIds!,
           gradeIds: data.gradeIds!,
-          teacherId: data.teacherId!,
+          teacherId: data.teacherId ?? null,
           price: data.price!,
           // Note: schedules are handled separately in the form
         };
