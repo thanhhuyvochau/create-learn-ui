@@ -74,9 +74,9 @@ const ClassesPage = () => {
     createMutation: createClass,
     updateMutation: updateClass,
     deleteMutation: deleteClass,
-    entityName: 'News article',
-    getEntityId: (news) => news.id,
-    getEntityLabel: (news) => news.name,
+    entityName: 'Class',
+    getEntityId: (cls) => cls.id,
+    getEntityLabel: (cls) => cls.name,
     createPayload: (data, isUpdate = false) => {
       if (isUpdate) {
         const payload: UpdateClassRequest = {
