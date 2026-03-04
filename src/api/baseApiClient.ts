@@ -206,7 +206,7 @@ export abstract class BaseApiClient<
     form.append(key, this.normalizeValue(value));
   }
 
-  async getAllPublicClasses(
+  async getAll(
     filters?: ApiFilters
   ): Promise<ApiListResponse<T> | undefined> {
     const qs = buildQueryString(

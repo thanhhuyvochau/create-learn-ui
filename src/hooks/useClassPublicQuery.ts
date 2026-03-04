@@ -25,7 +25,7 @@ export const useClassPublicQuery = (params: ClassApiFilters = {}) => {
         subjectId,
         ...(search && { search }),
       };
-      return await classApiClient.getAllPublicClasses(filters);
+      return await classApiClient.getAll(filters);
     },
     staleTime: 5 * 60 * 1000, // 5 minutes
   });

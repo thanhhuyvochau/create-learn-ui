@@ -25,7 +25,7 @@ export const useGradeQuery = (params: ApiFilters = {}) => {
         size,
         ...(search && { search }),
       };
-      return await gradeApiClient.getAllPublicClasses(filters);
+      return await gradeApiClient.getAll(filters);
     },
     staleTime: 5 * 60 * 1000, // 5 minutes
   });

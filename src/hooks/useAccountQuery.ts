@@ -25,7 +25,7 @@ export const useAccountQuery = (params: ApiFilters = {}) => {
         size,
         ...(search && { search }),
       };
-      return await accountApiClient.getAllPublicClasses(filters);
+      return await accountApiClient.getAll(filters);
     },
     staleTime: 5 * 60 * 1000, // 5 minutes
   });

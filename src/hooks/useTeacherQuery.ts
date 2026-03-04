@@ -26,7 +26,7 @@ export const useTeacherQuery = (params: ApiFilters = {}) => {
         size,
         ...(search && { search }),
       };
-      return await teacherApiClient.getAllPublicClasses(filters);
+      return await teacherApiClient.getAll(filters);
     },
     staleTime: 5 * 60 * 1000, // 5 minutes
   });

@@ -40,7 +40,7 @@ export interface ApiFilters {
 }
 
 export interface ApiClient<T, CreateT, UpdateT> {
-  getAllPublicClasses(
+  getAll(
     filters?: ApiFilters
   ): Promise<ApiListResponse<T> | undefined>;
   getById(id: string): Promise<ApiSingleResponse<T> | undefined>;

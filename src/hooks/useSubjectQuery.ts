@@ -25,7 +25,7 @@ export const useSubjectQuery = (params: ApiFilters = {}) => {
         size,
         ...(search && { search }),
       };
-      return await subjectApiClient.getAllPublicClasses(filters);
+      return await subjectApiClient.getAll(filters);
     },
     staleTime: 5 * 60 * 1000, // 5 minutes
   });

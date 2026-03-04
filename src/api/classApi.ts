@@ -22,7 +22,7 @@ class ClassApiClient extends BaseApiClient<
 > {
   protected readonly endpoint = '/api/classes';
 
-  async getAllPublicClasses(
+  async getAll(
     filters?: ClassApiFilters
   ): Promise<ApiListResponse<Class> | undefined> {
     const { buildQueryString } = await import('@/utils');
