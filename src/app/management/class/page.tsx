@@ -234,17 +234,19 @@ const ClassesPage = () => {
         title={selectedClass ? 'Edit Class' : 'Add Class'}
         size="lg"
       >
-        <ClassForm
-          initialValues={selectedClass}
-          onCancel={() => {
-            setSelectedClass(null);
-            close();
-          }}
-          onSubmit={(data) => handleFormSubmit(data, selectedClass)}
-          subjects={subjects}
-          grades={grades}
-          teachers={teachers}
-        />
+        {opened && (
+          <ClassForm
+            initialValues={selectedClass}
+            onCancel={() => {
+              setSelectedClass(null);
+              close();
+            }}
+            onSubmit={(data) => handleFormSubmit(data, selectedClass)}
+            subjects={subjects}
+            grades={grades}
+            teachers={teachers}
+          />
+        )}
       </FormModal>
 
       <DeleteConfirmModal

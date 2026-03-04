@@ -67,26 +67,45 @@ export function useImageUpload(options: UseImageUploadOptions): UseImageUpload {
   const [uploading, setUploading] = useState<boolean>(false);
   const [uploadError, setUploadError] = useState<string | null>(null);
   const [imageUrl, setImageUrl] = useState<string>(initialUrl);
+  const [objectUrl, setObjectUrl] = useState<string>('');
   const objectUrlRef = useRef<string>('');
 
-  const revokeObjectUrl = () => {
+  const revokeObjectUrl = useCallback(() => {
     if (objectUrlRef.current) {
       URL.revokeObjectURL(objectUrlRef.current);
       objectUrlRef.current = '';
     }
-  };
+  }, []);
 
-  const previewUrl = useMemo(() => {
+  // Manage blob URL creation/revocation as a proper side effect
+  useEffect(() => {
     if (selectedFile) {
       revokeObjectUrl();
       const url = URL.createObjectURL(selectedFile);
       objectUrlRef.current = url;
-      return url;
+      setObjectUrl(url);
+    } else {
+      revokeObjectUrl();
+      setObjectUrl('');
     }
-    return imageUrl || '';
-  }, [selectedFile, imageUrl]);
+    return () => {
+      // cleanup on unmount or before next effect run
+    };
+  }, [selectedFile, revokeObjectUrl]);
 
-  useEffect(() => () => revokeObjectUrl(), []);
+  // Sync imageUrl when initialUrl changes (e.g. modal opens with a different class)
+  useEffect(() => {
+    if (!selectedFile) {
+      setImageUrl(initialUrl);
+    }
+  }, [initialUrl, selectedFile]);
+
+  useEffect(() => () => revokeObjectUrl(), [revokeObjectUrl]);
+
+  const previewUrl = useMemo(() => {
+    if (selectedFile) return objectUrl;
+    return imageUrl || '';
+  }, [selectedFile, objectUrl, imageUrl]);
 
   const validateFile = useCallback(
     (file: File): string | null => {
@@ -168,8 +187,9 @@ export function useImageUpload(options: UseImageUploadOptions): UseImageUpload {
     setUploadError(null);
     setUploading(false);
     setImageUrl(initialUrl);
+    setObjectUrl('');
     revokeObjectUrl();
-  }, [initialUrl]);
+  }, [initialUrl, revokeObjectUrl]);
 
   return {
     selectedFile,
